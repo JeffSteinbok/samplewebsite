@@ -1,0 +1,22 @@
+{
+  "name": "samplewebsite",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JeffSteinbok/samplewebsite",
+  "authors": [
+    "Jeff Steinbok <jeff@steinbok.net>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "knockout": "~3.1.0",
+    "jqueryui": "~1.11.0",
+    "datatables": "~1.10.0"
+  }
+}
