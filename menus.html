@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+
+
+
+
 	<link href="css/themes/base/jquery.ui.core.css" rel="stylesheet"/>
 	<link href="css/themes/base/jquery.ui.resizable.css" rel="stylesheet"/>
 	<link href="css/themes/base/jquery.ui.selectable.css" rel="stylesheet"/>
@@ -29,329 +33,283 @@
 
 
 	<style type="text/css">
-	body {
-		font-family: Segoe UI;
-		font-size: 90%;
-		margin: 0;
-		
-	}
-	.header {
-		position: absolute;
-		z-index: 2;
-		left: 0;
-		right: 0;
-		top: 0;
-		height: 40px;
-		background: rgb(166, 213, 224);
-		line-height: 35px;
-		vertical-align: top;
-		white-space: nowrap;
-		
-		-webkit-touch-callout: none;
-		-webkit-user-select: none;
-	}
-	.headerTitle {
-		font-size: 24px;
-		font-family: Segoe UI Light;
-		margin: 0 10px;
-		display: inline-block;
-		height: 40px;
-		vertical-align: middle
-	}
-	.headerButtons {
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		height: 40px;
-	}
+	    
+    	body 
+    	{
+    		font-family: Segoe UI;
+    		font-size: 90%;
+    		margin: 0;
+    	}
 
-	.headerButton {
-		position: relative;
-		display: inline-block;
-		padding: 0 5px;
-		height: 40px;
-		vertical-align: middle;
-	}
-	.headerButton:hover {
-		background: rgba(255,255,255,.4);
-	}
-	.headerButton.isExpanded {
-		background: rgba(0,0,0,.4);
-		color: white;
-	}
-	.headerDropdown {
-		position: absolute;
-		top: 0px;
-		left: 0;
-		z-index: 1;
-		background: white;
-		color: black;
-		box-shadow: 2px 2px 10px rgba(0,0,0,.2);
-		margin: 0;
-		padding: 10px 0;
-		list-style-type: none;
-		opacity: 0;
-		visibility: hidden;
-		margin-top: -100px;
-		#transition: opacity .2s ease-out, margin-top .2s ease-out;
-	}
-	.isExpanded .headerDropdown {
-		opacity: 1;
-		margin-top: 0;
-		visibility: visible;
-	}
-	.isExpanded .dropdownClipper {
-		position: absolute;
-		top: 40px;
-		left: 0;
-		width: 500px;
-		height: 500px;
-		overflow: hidden;
-	}
-	.headerDropdownButton {
-		padding: 0 10px;
-	}
-	.headerDropdownButton:hover {
-		background: #888;
-		color: white;
-	}
-
-	.isExpanded .dismisser {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-	}
-
-	.content {
-		padding: 10px;
-		position: absolute;
-		top: 40px;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
-	
-	
-	
-
-        body
-        {
-            border:0;
-        }
-        div.header {
+        div#header {
             height: 40px;
             background-color: #094AB2;
         }
 
+        #headerCommands
+        {
+            padding:0;
+            margin:0;
+        }
+        
+        #headerCommands .ui-button {
+            background-color: none;
+            background-image: none;
+            border: none;
+            color: white;
+            height: 35px;
+            padding-top: 5px;
+        }
 
+        #headerCommands .ui-state-default {
+            background-color: transparent;
+        }
 
-            div.header #commands.hideme {
-                display: none;
-            }
+        #headerCommands .ui-state-hover {
+            background-color: #08419c;
+        }
 
-            div.header #commands .ui-button {
-                background-color: none;
-                background-image: none;
-                border: none;
-                color: white;
-                height: 35px;
-                padding-top: 5px;
-            }
+        #headerCommands .ui-state-selected {
+            background-color: #073887;
+        }
 
+        #headerCommands .ui-corner-all {
+            border-radius: 0px;
+            -moz-border-radius-bottomright: 0px;
+            -moz-border-radius-bottomleft: 0px;
+            -moz-border-radius-topright: 0px;
+            -moz-border-radius-topleft: 0px;
+        }
 
-            div.header #commands .ui-state-default {
-                background-color: transparent;
-            }
-
-            div.header #commands .ui-state-hover {
-                background-color: #08419c;
-            }
-
-            div.header #commands .ui-state-selected {
-                background-color: #073887;
-            }
-
-            div.header .ui-corner-all {
-                border-radius: 0px;
-                -moz-border-radius-bottomright: 0px;
-                -moz-border-radius-bottomleft: 0px;
-                -moz-border-radius-topright: 0px;
-                -moz-border-radius-topleft: 0px;
-            }
-
-        div.header #commands .ui-button .ui-icon-onedriveplus {
-                background-position: -29px -393px;
-                background-image: url("https://d.sfx-df.ms/skydrive_pc_strip_32_ltr_CHW-iCMhB-ME26uCXIHgUA2.png");
-            }
-
-        div.header #commands .ui-button .ui-button-icon-primary {
+        #headerCommands .ui-button .ui-button-icon-primary {
             width: 26px;
             height: 26px;
             margin: 0;
             top: 8px;
         }
 
-        div.header #commands
-        {
-            padding:0;
-            margin:0;
-        }
-        div.header #commands li
+        #headerCommands li
         {
             float:left;
             list-style:none;
         }
 
-        div.header #commands .ui-button-text-icon-primary .ui-button-text {
+        #headerCommands .ui-button-text-icon-primary .ui-button-text {
             margin-left: 8px;
         }
 
-        div.header .ui-menu {
+        #headerCommands .ui-menu {
             border: 2px solid #094AB2;
+            z-index:2; 
+            position:absolute; 
+            width:200px;
         }
 
-        div.header .ui-menu li.ui-menu-item a {
+        #headerCommands .ui-menu li.ui-menu-item a {
             padding-top: 5px !important;
             padding-bottom: 5px !important;
             margin: 0 !important;
         }
 
-        div.header .ui-menu li.ui-menu-item.ui-state-focus {
+        #headerCommands .ui-menu li.ui-menu-item.ui-state-focus {
             background-color: lightgray;
             background-image: none;
             border: none !important;
         }
 
-    
+        #headerCommands .ui-button .ui-icon-onedriveplus {
+            background-position: -29px -393px;
+            background-image: url("images/onedrive_sprites.png");
+        }
+
 	</style>
 
 
 
-<script type="text/javascript">
-	function initializePage() {
-		$(".dismisser").click(function() {
-			$(".headerButton").toggleClass("isExpanded", false);		
-			return false;
-		});
-
-		$(".headerButton").click(function() {
-			$(this).toggleClass("isExpanded");
-		});
-	}
-</script>
-</head>
+    </head>
 	<body>
 		
 
 
-      <div class="header">
-          <ul id="commands" class="">
-         
-          </ul>
+        <div id="header">
+            <ul id="headerCommands" />
+        </div>
 
-          
-      </div>
-
-		<script>
+        <script>
+        // This entire script block should be moved to a seperate JS file
+        
+        
+        //
+        // Initialize the header menus given a passed in menuData structure.
+        // The menuData structure should look somewhat as follows:
+        //
+        // NOTE:  Icons in the iconClass should be 26x26px.
+        //   
+        //    [
+        //        {
+        //            label: "Link",
+        //            onclick: function() { /* do something */ },
+        //            iconClass: "ui-icon-onedriveplus"
+        //        },
+        //        {
+        //            label: "Foo",
+        //            menu: [
+        //                {
+        //                    label: "Foo Submenu 1",
+        //                    href: "http://onedrive.com"
+        //                },
+        //                {
+        //                    label: "Foo Submenu 2",
+        //                    onclick: function() { /* do something */ }
+        //                }    
+        //            ]
+        //        }
+        //    ]
+        //
+        function initHeaderMenus(menuData)
+        {
+            // Define a quick helper function to hide the existing menus.
+            var hideMenus = function()
+            {
+                $("#headerCommands .ui-menu").menu().hide();
+                $("#headerCommands > li > a").removeClass("ui-state-selected");
+            };
+            
+            // Loop over each command in the menuData structure.
+            menuData.forEach(function (element, index, array) 
+            {
+                var newCommand = $('<li />').appendTo($("#headerCommands"));
+                var newButton = $('<a />')
+                  .html(element.label)
+                  .appendTo(newCommand)
+                  .button();
+                    
+                if (element.iconClass)
+                {
+                    newButton.button( "option", "icons", 
+                    {
+                        primary: element.iconClass } 
+                    );
+                }
+                
+                // If this command has a drop-down menu...
+                if (element.menu)
+                {
+                    var newCommandMenu = $('<ul />').appendTo(newCommand);
+                
+                    // Iterate over each item in the drop-down menu and 
+                    // add it to the list we will bind to the JQueryUI Menu
+                    // widget.
+                    element.menu.forEach(function (element, index, array)
+                    {
+                        var li = $('<li />');
+                        var anchor = $('<a />')
+                        .attr('href', element.href)
+                        .appendTo(li);
+                
+                        if (element.onclick) {
+                            anchor.click(element.onclick);
+                        }
+                        anchor.html(element.label);
+                        newCommandMenu.append(li)
+                    });
+                
+                    newCommandMenu.menu()
+                    .hide()
+                    .on("menuselect", hideMenus);
+                }
+                else
+                {
+                    if (element.onclick) {
+                        newButton.click(element.onclick);
+                    }
+                }
+                    
+                // Define the click handler for the header button 
+                // we just created above.
+                newButton.click(function () {
+                    
+                    // First thing, hide the other menus.
+                    hideMenus();
+                    
+                    // Register a click outside the menu to close it
+                    $(document).on("click.headerMenu", function () 
+                    {
+                        hideMenus();
+                        $(document).off("click.headerMenu");
+                    });
+    
+                    if (newCommandMenu)
+                    {
+                        // Make use of the general purpose show and position operations
+                        // open and place the menu where we want.
+                        newCommandMenu.show().position({
+                            my: "left top",
+                            at: "left bottom",
+                            of: newButton
+                        });
+    
+                        newButton.addClass("ui-state-selected")
+                    }
+    
+                    // Make sure to return false here or the click registration
+                    // above gets invoked.
+                    event.stopPropagation();
+                    return false;
+                });
+            });
+        }
+        </script>
+        
+        <script>
+        // The following is what you should have on the page.  
         $(document).ready(function () {
+    
+            var menus =
+            [
+                {
+                    label: "Link",
+                    onclick: function() { alert(1); },
+                    iconClass: "ui-icon-onedriveplus"
+                },
+                {
+                    label: "Command With Menu",
+                    iconClass: "ui-icon-onedriveplus",
+                    menu: [
+                        {
+                            label: "Link via HREF",
+                            href: "http://onedrive.com"
+                        },
+                        {
+                            label: "Runs script",
+                            href: "",
+                            onclick: function () { alert(1); }
+                        }
+                    ]
+                },
+                {
+                    label: "No Icon Menu",
+                    menu: [
+                        {
+                            label: "Bar Submenu 1",
+                            href: "#",
+                        },
+                        {
+                            label: "Bar Submenu 2",
+                            href: "#",
+                        },
+                        {
+                            label: "Bar Submenu 3",
+                            href: "#",
+                        }
+                    ]
+                },
+            ];
+          
+            initHeaderMenus(menus); 
+        });
+        </script> 
 
-          var menus =
-          [
-              {
-                  label: "Foo",
-                  menu: [
-                          {
-                              label: "Foo Submenu 1",
-                              href: "http://onedrive.com"
-                          },
-                          {
-                              label: "Foo Submenu 2",
-                              href: "#",
-                              onclick: function () { alert(1); return false; }
-
-                          },
-                          {
-                              label: "Foo Submenu 3",
-                              href: "#",
-                          }
-
-                  ]
-              },
-              {
-                  label: "Bar",
-                  menu: [
-                          {
-                              label: "Bar Submenu 1",
-                              href: "#",
-                          },
-                          {
-                              label: "Bar Submenu 2",
-                              href: "#",
-                          },
-                          {
-                              label: "Bar Submenu 3",
-                              href: "#",
-                          }
-
-                  ]
-              },
-          ]
-
-          menus.forEach(function (element, index, array) {
-             var commands = $("#commands");
-              var newCommand = $('<li></li>').appendTo(commands);
-              var newButton = $('<a class="tb" />')
-              .html(element.label)
-              .appendTo(newCommand)
-              .button({});
-
-              var newCommandMenu = $('<ul style="z-index:1000; position:absolute; width:200px" />').appendTo(newCommand);
-
-              element.menu.forEach(function (element, index, array) {
-                  var li = $('<li />');
-                  var anchor = $('<a />')
-                  .attr('href', element.href)
-                  .appendTo(li);
-
-                  if (element.onclick) {
-                      anchor.click(element.onclick);
-                  }
-                  anchor.html(element.label);
-                  newCommandMenu.append(li)
-              });
-
-              newCommandMenu.menu().hide();
-
-
-              newButton.click(function () {
-
-                  // Make use of the general purpose show and position operations
-                  // open and place the menu where we want.
-                  newCommandMenu.show().position({
-                      my: "left top",
-                      at: "left bottom",
-                      of: newButton
-                  });
-
-                  // Register a click outside the menu to close it
-                  $(document).on("click", function () {
-                      newCommandMenu.hide();
-                      newButton.removeClass("ui-state-selected")
-                  });
-
-                  newButton.addClass("ui-state-selected")
-
-                  // Make sure to return false here or the click registration
-                  // above gets invoked.
-                  return false;
-              });
-          });
-      });
-      </script>
 	</body>
 	
 </html>
