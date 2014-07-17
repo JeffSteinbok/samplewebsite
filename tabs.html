@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+
+
+
+	<link href="css/themes/base/jquery.ui.core.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.resizable.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.selectable.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.accordion.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.autocomplete.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.button.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.menu.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.dialog.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.slider.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.tabs.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.datepicker.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.progressbar.css" rel="stylesheet"/>
+	<link href="css/themes/base/jquery.ui.theme.css" rel="stylesheet"/>
+
+
+
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
+
+
+
+
+	<style type="text/css">
+	    
+    	body 
+    	{
+    		font-family: Segoe UI;
+    		font-size: 90%;
+    		margin: 0;
+    	}
+
+        div#header {
+            height: 40px;
+            background-color: #094AB2;
+        }
+        
+        #mainContentWrapper 
+        {
+            position: absolute;
+            left: 180px;
+            margin: 0;
+            padding: 0 10px;
+            right: 0;
+            bottom: 26px;
+            top: 40px;
+            overflow: auto;
+        }
+        
+        #leftNav {
+            background-color: rgb(243, 243, 243);
+            bottom: 0px;
+            display: block;
+            left: 0px;
+            position: absolute;
+            top: 40px;
+            width: 180px;
+            padding-top: 10px;
+            z-index: 20;
+        }
+
+        #leftNav ul
+        {
+            padding-left:20px;
+        }
+        
+        #leftNav li {
+            color: rgb(0, 0, 0);
+            list-style:none;
+            font-family: 'Segoe UI Light', 'Segoe UI SemiLight', 'Segoe UI Web Light', 'Segoe UI Web Regular', 'Segoe UI', 'Segoe UI Symbol', HelveticaNeue-Light, 'Helvetica Neue', Arial;
+            font-size: 21px;
+            font-weight: normal;
+            height: 38px;
+            letter-spacing: -1px;
+            line-height: 38px;
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            white-space: nowrap;
+            width: 165px;
+        }        
+         
+        #header .ui-button {
+            background-color: none;
+            background-image: none;
+            border: none;
+            color: white;
+            height: 35px;
+            padding-top: 5px;
+        }
+        
+        #header .ui-state-default {
+            background-color: transparent;
+        }
+        
+        #header .ui-state-focus {
+            background-color: #08419c;
+        }
+        
+        #header .ui-state-hover {
+            background-color: #08419c;
+        }
+            
+        #header .ui-state-selected {
+            background-color: #073887;
+        }
+        
+        #header .ui-corner-all {
+            border-radius: 0px;
+            -moz-border-radius-bottomright: 0px;
+            -moz-border-radius-bottomleft: 0px;
+            -moz-border-radius-topright: 0px;
+            -moz-border-radius-topleft: 0px;
+        }
+            
+        
+        
+        .ui-tabs .ui-state-active {
+            background-color:rgb(243, 243, 243);
+            background-image:none;
+        }
+        
+        .ui-tabs .ui-corner-top {
+            border-radius: 0px;
+            -moz-border-radius-topright: 0px;
+            -moz-border-radius-topleft: 0px;
+        }
+        
+        .ui-tabs .ui-tabs-nav
+        {
+            background:none;
+            border:none;
+        }
+        
+        .ui-tabs
+        {
+            border:none;
+        }
+
+	</style>
+
+
+
+    </head>
+	<body>
+		
+        <div id="header">
+		    <a class="headerButton">Create</a>
+		    <a class="headerButton">Save Incident</a>
+		    <a class="headerButton">Cancel Incident</a>
+		</div>
+		<div id="leftNav">
+		    <ul>
+		        <li>Link 1</li>
+		        <li>Link 1</li>
+		        <li>Link 1</li>
+		    </ul>
+		</div>
+		<div id="mainContentWrapper">
+    		<div id="tabset">
+    		    <ul>
+                    <li><a href="#tabs-1">General</a></li>
+                    <li><a href="#tabs-2">QoS Impact</a></li>
+                    <li><a href="#tabs-3">Communications</a></li>
+                    </ul>
+                <div id="tabs-1">
+                    Content goes here.
+                </div>
+                <div id="tabs-2">
+                </div>
+                <div id="tabs-3">
+                </div>
+            </div>
+            </div>
+        <script>
+        // The following is what you should have on the page.  
+        $(document).ready(function () {
+            $(".headerButton").button();
+            $("#tabset").tabs();
+            
+        });
+        </script> 
+
+	</body>
+	
+</html>
