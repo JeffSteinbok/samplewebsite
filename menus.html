@@ -45,14 +45,14 @@
             height: 40px;
             background-color: #094AB2;
         }
-
+        
         #headerCommands
         {
             padding:0;
             margin:0;
         }
-        
-        #headerCommands .ui-button {
+                
+        #header .ui-button {
             background-color: none;
             background-image: none;
             border: none;
@@ -60,66 +60,105 @@
             height: 35px;
             padding-top: 5px;
         }
-
-        #headerCommands .ui-state-default {
+        
+        #header .ui-state-default {
             background-color: transparent;
         }
-
-        #headerCommands .ui-state-hover {
+        
+        #header .ui-state-focus {
             background-color: #08419c;
         }
-
-        #headerCommands .ui-state-selected {
+        
+        #header .ui-state-hover {
+            background-color: #08419c;
+        }
+            
+        #header .ui-state-selected {
             background-color: #073887;
         }
-
-        #headerCommands .ui-corner-all {
+        
+        #header .ui-corner-all {
             border-radius: 0px;
             -moz-border-radius-bottomright: 0px;
             -moz-border-radius-bottomleft: 0px;
             -moz-border-radius-topright: 0px;
             -moz-border-radius-topleft: 0px;
         }
-
+        
         #headerCommands .ui-button .ui-button-icon-primary {
             width: 26px;
             height: 26px;
             margin: 0;
             top: 8px;
         }
-
+        
+        #headerCommands .ui-button {
+            float: left;
+        }
+        
         #headerCommands li
         {
             float:left;
             list-style:none;
         }
-
+        
         #headerCommands .ui-button-text-icon-primary .ui-button-text {
             margin-left: 8px;
         }
-
+        
+        #headerCommands .ui-button-text-icons .ui-button-text {
+            margin-left: 8px;
+        }        
+        
         #headerCommands .ui-menu {
             border: 2px solid #094AB2;
             z-index:2; 
             position:absolute; 
             width:200px;
         }
-
+        
         #headerCommands .ui-menu li.ui-menu-item a {
             padding-top: 5px !important;
             padding-bottom: 5px !important;
             margin: 0 !important;
         }
-
+        
         #headerCommands .ui-menu li.ui-menu-item.ui-state-focus {
             background-color: lightgray;
             background-image: none;
             border: none !important;
         }
-
-        #headerCommands .ui-button .ui-icon-onedriveplus {
-            background-position: -29px -393px;
-            background-image: url("images/onedrive_sprites.png");
+        
+        #headerCommands #logoButton {
+            padding-left:10px;
+        }
+        
+        #headerCommands #logoButton .ui-button-text {
+            font-family:segoe ui light;
+            font-size:24px;
+            padding-left:45px;
+            padding-top:0px;
+        }
+        
+        #headerCommands .ui-button .ui-icon-odim-plus {
+            background-image: url("images/CreateIconLight.png");
+        }
+        
+        #headerCommands .ui-button .ui-icon-odim-sendMail {
+            background-image: url("images/SendMailIconLight.png");
+        }
+        
+        #headerCommands .ui-button .ui-icon-odim-headerwithmenu {
+            background-image: url("images/ChevronDown.png");
+            margin:0px;
+        }
+        
+        #headerCommands .ui-button .ui-icon-odim-logo {
+            background-image: url("images/ODIMLogo.png");
+            height:40px;
+            width:40px;
+            top:0px;
+            left:18px;
         }
 
 	</style>
@@ -183,13 +222,12 @@
                   .html(element.label)
                   .appendTo(newCommand)
                   .button();
-                    
+                
+                var buttonIcons = {};
+                
                 if (element.iconClass)
                 {
-                    newButton.button( "option", "icons", 
-                    {
-                        primary: element.iconClass } 
-                    );
+                    buttonIcons.primary = element.iconClass;
                 }
                 
                 // If this command has a drop-down menu...
@@ -213,17 +251,26 @@
                         anchor.html(element.label);
                         newCommandMenu.append(li)
                     });
-                
+                    
+                    buttonIcons.secondary = "ui-icon-odim-headerwithmenu";
+                    
                     newCommandMenu.menu()
                     .hide()
                     .on("menuselect", hideMenus);
                 }
                 else
                 {
-                    if (element.onclick) {
+                    if (element.onclick) 
+                    {
                         newButton.click(element.onclick);
                     }
+                    else
+                    {
+                        newButton.attr('href', element.href);
+                    }
                 }
+                
+                newButton.button( "option", "icons", buttonIcons);
                     
                 // Define the click handler for the header button 
                 // we just created above.
@@ -270,11 +317,11 @@
                 {
                     label: "Link",
                     onclick: function() { alert(1); },
-                    iconClass: "ui-icon-onedriveplus"
+                    iconClass: "ui-icon-odim-plus"
                 },
                 {
                     label: "Command With Menu",
-                    iconClass: "ui-icon-onedriveplus",
+                    iconClass: "ui-icon-odim-sendMail",
                     menu: [
                         {
                             label: "Link via HREF",
