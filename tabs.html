@@ -51,7 +51,7 @@
             position: absolute;
             left: 180px;
             margin: 0;
-            padding: 0 10px;
+            padding: 0;
             right: 0;
             bottom: 26px;
             top: 40px;
@@ -116,7 +116,7 @@
             background-color: #073887;
         }
         
-        #header .ui-corner-all {
+        #header .ui-corner-all, .ui-tabs .ui-corner-all {
             border-radius: 0px;
             -moz-border-radius-bottomright: 0px;
             -moz-border-radius-bottomleft: 0px;
@@ -125,10 +125,23 @@
         }
             
         
+        .ui-tabs .ui-state-default {
+            background-color:#0e66ea;
+            background-image:none;
+            border:0;
+        }
         
         .ui-tabs .ui-state-active {
-            background-color:rgb(243, 243, 243);
+            background-color:white;
             background-image:none;
+        }
+        
+        .ui-tabs .ui-state-default a {
+            color:white;
+        }
+        
+        .ui-tabs .ui-state-active a {
+            color:#0e66ea;
         }
         
         .ui-tabs .ui-corner-top {
@@ -141,11 +154,14 @@
         {
             background:none;
             border:none;
+            background-color:#08419c;
+            padding-left:10px;
         }
         
         .ui-tabs
         {
             border:none;
+            padding:0;
         }
 
 	</style>
@@ -168,6 +184,7 @@
 		    </ul>
 		</div>
 		<div id="mainContentWrapper">
+		    
     		<div id="tabset">
     		    <ul>
                     <li><a href="#tabs-1">General</a></li>
