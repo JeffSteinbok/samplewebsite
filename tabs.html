@@ -125,23 +125,32 @@
         }
             
         
-        .ui-tabs .ui-state-default {
-            background-color:#0e66ea;
+        .ui-tabs .ui-tabs-nav .ui-state-default {
+            background-color:#094AB2;
             background-image:none;
             border:0;
+            margin-left:5px;
+            border-top:2px solid #094AB2;
+            border-left:2px solid #094AB2;
+            border-right:2px solid #094AB2;
+            padding-bottom:0 !important;
         }
         
-        .ui-tabs .ui-state-active {
+        .ui-tabs .ui-tabs-nav .ui-state-active {
             background-color:white;
             background-image:none;
         }
         
-        .ui-tabs .ui-state-default a {
+        .ui-tabs .ui-tabs-nav .ui-state-focus a {
+            outline:none !important;
+        }
+        
+        .ui-tabs .ui-tabs-nav .ui-state-default a {
             color:white;
         }
         
-        .ui-tabs .ui-state-active a {
-            color:#0e66ea;
+        .ui-tabs .ui-tabs-nav .ui-state-active a {
+            color:#094AB2;
         }
         
         .ui-tabs .ui-corner-top {
@@ -152,16 +161,25 @@
         
         .ui-tabs .ui-tabs-nav
         {
-            background:none;
+            background-color:white;
             border:none;
-            background-color:#08419c;
-            padding-left:10px;
+            padding-right:2px;
+            background-image:url('images/tabHeaderBG_2px.png');
+            background-repeat:repeat-x;
+            background-position:bottom;
         }
         
         .ui-tabs
         {
             border:none;
             padding:0;
+        }
+        
+        .ui-tabs .ui-tabs-panel
+        {
+            border-left:2px solid #094AB2;
+            border-right:2px solid #094AB2;
+            border-bottom:2px solid #094AB2;
         }
 
 	</style>
@@ -184,7 +202,18 @@
 		    </ul>
 		</div>
 		<div id="mainContentWrapper">
-		    
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>123456</td>
+                    <td>Status</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td colspan="3"><input type="text" style="width:600px" /></td>
+                </tr>
+            </table>
     		<div id="tabset">
     		    <ul>
                     <li><a href="#tabs-1">General</a></li>
